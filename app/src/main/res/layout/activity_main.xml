@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/box4"
-        app:layout_constraintTop_toBottomOf="@+id/nickname_user" />
+        app:layout_constraintTop_toBottomOf="@+id/submit_button" />
 
     <TextView
         android:id="@+id/box2"
@@ -46,7 +46,7 @@
         app:layout_constraintEnd_toStartOf="@+id/box3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/box1"
-        app:layout_constraintTop_toBottomOf="@+id/nickname_user" />
+        app:layout_constraintTop_toBottomOf="@+id/submit_button" />
 
     <TextView
         android:id="@+id/box1"
@@ -58,7 +58,7 @@
         app:layout_constraintEnd_toStartOf="@+id/box2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nickname_user" />
+        app:layout_constraintTop_toBottomOf="@+id/submit_button" />
 
     <TextView
         android:id="@+id/box3"
@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toStartOf="@+id/box4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/box2"
-        app:layout_constraintTop_toBottomOf="@+id/nickname_user" />
+        app:layout_constraintTop_toBottomOf="@+id/submit_button" />
 
     <TextView
         android:id="@+id/box4"
@@ -82,7 +82,7 @@
         app:layout_constraintEnd_toStartOf="@+id/box5"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/box3"
-        app:layout_constraintTop_toBottomOf="@+id/nickname_user" />
+        app:layout_constraintTop_toBottomOf="@+id/submit_button" />
 
     <TextView
         android:id="@+id/box14"
@@ -127,7 +127,7 @@
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/reset_button"
         app:layout_constraintEnd_toStartOf="@+id/box20"
-        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toEndOf="@+id/box18"
         app:layout_constraintTop_toBottomOf="@+id/box19" />
 
@@ -295,6 +295,7 @@
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/reset_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toEndOf="@+id/box24"
         app:layout_constraintTop_toBottomOf="@+id/box20" />
 
@@ -338,7 +339,7 @@
         android:id="@+id/reset_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="60dp"
         android:text="@string/reset_button"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -364,12 +365,13 @@
         android:id="@+id/submit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
         android:text="@string/submit_button"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nickname_text" />
+        app:layout_constraintTop_toTopOf="@+id/nickname_text" />
 
     <TextView
         android:id="@+id/clicks_text"
@@ -388,7 +390,6 @@
         android:id="@+id/nickname_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
         android:shadowColor="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"

@@ -16,7 +16,7 @@
 
 <resources>
     <string name="app_name">Lights Out</string>
-    <string name="welcome">Welcome to the Lights Out Game!</string>
+    <string name="welcome">Play the Lights Out Game!</string>
     <string name="nickname_text">What is your nickname?</string>
 
     <string name="submit_button">submit</string>

@@ -1,0 +1,43 @@
+[33mcommit 935590e6218bedc187c3852c3113f367756f8120[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: 8a3083a b8c1695
+Author: knlabador <knlabador@up.edu.ph>
+Date:   Wed Feb 26 16:03:40 2020 +0800
+
+    fix: fixed vertical chains
+
+[33mcommit 8a3083a908073849e1e88dd3fa7e162b00099b73[m
+Author: knlabador <knlabador@up.edu.ph>
+Date:   Wed Feb 26 15:59:28 2020 +0800
+
+    fix: fixed vertical chains
+
+[33mcommit b8c1695a8ff6f2f53711d0380f072ad4449c46e5[m
+Merge: 11b0e2e 9a78c7a
+Author: knlabador <knlabador@up.edu.ph>
+Date:   Wed Feb 26 15:50:26 2020 +0800
+
+    Merge branch 'master' of https://github.com/CMSC-23-B9L-2nd-Sem-2020/exercise-3-user-activity-and-constraint-layout-knlabador
+
+[33mcommit 11b0e2eb8dfdaa0bf2d2020834114cfad12156af[m
+Author: knlabador <knlabador@up.edu.ph>
+Date:   Wed Feb 26 15:48:10 2020 +0800
+
+    fix: fixed vertical chains
+
+[33mcommit 9a78c7a2507425c455fb9a0cd12851daa7708c58[m
+Author: knlabador <knlabador@up.edu.ph>
+Date:   Wed Feb 26 15:45:06 2020 +0800
+
+    add: fixed vertical chains
+
+[33mcommit 5706088bc00c9052ae357af48329fb8c1f26878d[m
+Author: knlabador <knlabador@up.edu.ph>
+Date:   Wed Feb 26 14:49:19 2020 +0800
+
+    feat: added user name submission
+
+[33mcommit 870ab7e0f4c5f9087515989fb05d2bbafdb4fbfa[m
+Author: knlabador <knlabador@up.edu.ph>
+Date:   Wed Feb 26 14:17:07 2020 +0800
+
+    feat: added game layout
