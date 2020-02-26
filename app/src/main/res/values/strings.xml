@@ -1,0 +1,53 @@
+<!--
+  ~ Copyright (C) 2018 Google Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">Lights Out</string>
+    <string name="welcome">Welcome to the Lights Out Game!</string>
+    <string name="what_is_your_nickname">What is your nickname?</string>
+
+    <string name="submit_button">submit</string>
+    <string name="reset_button">reset</string>
+    <string name="clicks_text">Clicks:</string>
+
+    <string name="box1">Box One</string>
+    <string name="box2">Box Two</string>
+    <string name="box3">Box Three</string>
+    <string name="box4">Box Four</string>
+    <string name="box5">Box Five</string>
+    <string name="box6">Box Six</string>
+    <string name="box7">Box Seven</string>
+    <string name="box8">Box Eight</string>
+    <string name="box9">Box Nine</string>
+    <string name="box10">Box Ten</string>
+    <string name="box11">Box Eleven</string>
+    <string name="box12">Box Twelve</string>
+    <string name="box13">Box Thirteen</string>
+    <string name="box14">Box Fourteen</string>
+    <string name="box15">Box Fifteen</string>
+    <string name="box16">Box Sixteen</string>
+    <string name="box17">Box Seventeen</string>
+    <string name="box18">Box Eighteen</string>
+    <string name="box19">Box Nineteen</string>
+    <string name="box20">Box Twenty</string>
+    <string name="box21">Box Twenty One</string>
+    <string name="box22">Box Twenty Two</string>
+    <string name="box23">Box Twenty Three</string>
+    <string name="box24">Box Twenty Four</string>
+    <string name="box25">Box Twenty Five</string>
+
+</resources>
+
