@@ -16,9 +16,13 @@
 
 package com.android.example.colormyviews
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -28,13 +32,47 @@ import androidx.appcompat.app.AppCompatActivity
  */
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var nicknameEditText: EditText
+    private lateinit var changeNicknameButton: Button
+    private lateinit var nicknameTextView: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        nicknameEditText = findViewById(R.id.nickname_text)
+        nicknameTextView = findViewById(R.id.nickname_user)
+        changeNicknameButton = findViewById(R.id.submit_button)
+
+        changeNicknameButton.setOnClickListener {
+            changeNickname(it)
+        }
+
+        nicknameTextView.setOnClickListener {
+            updateNickname()
+        }
         setListeners()
     }
 
+    private fun updateNickname() {
+        nicknameTextView.visibility = View.GONE
+        nicknameEditText.visibility = View.VISIBLE
+        changeNicknameButton.visibility = View.VISIBLE
+
+        nicknameEditText.requestFocus()
+    }
+
+    private fun changeNickname(view: View) {
+        nicknameTextView.text = nicknameEditText.text
+
+        nicknameTextView.visibility = View.VISIBLE
+        nicknameEditText.visibility = View.GONE
+        changeNicknameButton.visibility = View.GONE
+
+        val inputMethodManager: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken,0)
+
+    }
     /**
      * Attaches listeners to all the views.
      */
