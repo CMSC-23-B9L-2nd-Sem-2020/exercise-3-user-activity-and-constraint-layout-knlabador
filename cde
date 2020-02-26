@@ -1,0 +1,23 @@
+[33mcommit b00509bf1f43ada4c612ac849f9d3f0a931eb561[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: knlabador <knlabador@up.edu.ph>
+Date:   Wed Feb 26 17:50:31 2020 +0800
+
+    feat: added switching lights
+
+[33mcommit 778df296ed06f9f1d33ad4fde1423ec59993ec51[m
+Author: knlabador <knlabador@up.edu.ph>
+Date:   Wed Feb 26 16:41:53 2020 +0800
+
+    feat: added updating nickname
+
+[33mcommit 8a3083a908073849e1e88dd3fa7e162b00099b73[m
+Author: knlabador <knlabador@up.edu.ph>
+Date:   Wed Feb 26 15:59:28 2020 +0800
+
+    fix: fixed vertical chains
+
+[33mcommit 870ab7e0f4c5f9087515989fb05d2bbafdb4fbfa[m
+Author: knlabador <knlabador@up.edu.ph>
+Date:   Wed Feb 26 14:17:07 2020 +0800
+
+    feat: added game layout

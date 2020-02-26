@@ -166,6 +166,19 @@ class MainActivity : AppCompatActivity() {
                     change(board[i][j+1],i,j+1,light)
                 }
                 change(board[i-1][j],i-1,j,light)
+
+            }
+
+            else if(j==0) {
+                change(board[i-1][j],i-1,j,light)
+                change(board[i+1][j],i+1,j,light)
+                change(board[i][j+1],i,j+1,light)
+            }
+
+            else if(j==4) {
+                change(board[i-1][j],i-1,j,light)
+                change(board[i+1][j],i+1,j,light)
+                change(board[i][j-1],i,j-1,light)
             }
 
             else {
@@ -174,18 +187,5 @@ class MainActivity : AppCompatActivity() {
                 change(board[i][j-1],i,j-1,light)
                 change(board[i][j+1],i,j+1,light)
             }
-
-
-
-//        if (i == 0) {
-//            if(j==0 || j==4)
-//            //adj with box2,box6
-//            R.id.box1 -> view.setBackgroundColor(Color.BLACK)
-//
-//            //ad
-//            R.id.box2 -> view.setBackgroundColor(Color.BLACK)
-//
-//            R.id.box25 -> view.setBackgroundColor(Color.BLACK)
-//        }
     }
 }
