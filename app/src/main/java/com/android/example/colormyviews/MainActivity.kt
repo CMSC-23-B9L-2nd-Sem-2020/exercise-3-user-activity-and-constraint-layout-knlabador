@@ -73,11 +73,8 @@ class MainActivity : AppCompatActivity() {
         inputMethodManager.hideSoftInputFromWindow(view.windowToken,0)
 
     }
-    /**
-     * Attaches listeners to all the views.
-     */
-    private fun setListeners() {
 
+    private fun setListeners() {
         val boxOne = findViewById<TextView>(R.id.box1)
         val boxTwo = findViewById<TextView>(R.id.box2)
         val boxThree = findViewById<TextView>(R.id.box3)
@@ -103,39 +100,92 @@ class MainActivity : AppCompatActivity() {
         val boxTwentyThree = findViewById<TextView>(R.id.box23)
         val boxTwentyFour = findViewById<TextView>(R.id.box24)
         val boxTwentyFive = findViewById<TextView>(R.id.box25)
-
-
-        val rootConstraintLayout = findViewById<View>(R.id.constraint_layout)
-
         val resetButton = findViewById<TextView>(R.id.reset_button)
 
-        val clickableViews: List<View> =
-            listOf(
-                boxOne, boxTwo, boxTwentyFive, rootConstraintLayout, resetButton
-            )
+        val board : List<List<View>> = listOf(
+            listOf(boxOne,boxTwo,boxThree,boxFour,boxFive),
+            listOf(boxSix,boxSeven,boxEight,boxNine,boxTen),
+            listOf(boxEleven,boxTwelve,boxThirteen,boxFourteen,boxFifteen),
+            listOf(boxSixteen,boxSeventeen,boxEighteen,boxNineteen,boxTwenty),
+            listOf(boxTwentyOne,boxTwentyTwo,boxTwentyThree,boxTwentyFour,boxTwentyFive)
+        )
 
-        for (item in clickableViews) {
-            item.setOnClickListener { makeColored(it) }
+        val boardlight : Array<Array<Int>> = arrayOf(
+            arrayOf(1,1,1,1,1),
+            arrayOf(1,1,1,1,1),
+            arrayOf(1,1,1,1,1),
+            arrayOf(1,1,1,1,1),
+            arrayOf(1,1,1,1,1)
+        )
+
+        for (i in 0..4) {
+            for(j in 0..4) {
+                board[i][j].setOnClickListener { flipLights(it,board,i,j,boardlight) }
+            }
         }
     }
 
-    /**
-     * Sets the background color of a view depending on it's resource id.
-     * This is a way of using one click handler to do similar operations on a
-     * group of views.
-     */
-
-    private fun makeColored(view: View) {
-        when (view.id) {
-
-            // Boxes using Color class colors for background
-            R.id.box1 -> view.setBackgroundColor(Color.BLACK)
-            R.id.box2 -> view.setBackgroundColor(Color.GRAY)
-
-            R.id.box25 -> view.setBackgroundColor(Color.BLUE)
-
-
-            else -> view.setBackgroundColor(Color.TRANSPARENT)
+        private fun change(view: View,i: Int,j: Int, light: Array<Array<Int>>) {
+            if(light[i][j] == 1) {
+                light[i][j] = 0
+                view.setBackgroundColor(Color.BLACK)
+            }
+            else {
+                light[i][j] = 1
+                view.setBackgroundColor(Color.WHITE)
+            }
         }
+
+        private fun flipLights(view: View,board: List<List<View>>,i: Int,j: Int, light: Array<Array<Int>>) {
+
+            change(view,i,j,light)
+
+            if(i==0) {
+                if(j==0) {
+                    change(board[i][j+1],i,j+1,light)
+                }
+                else if(j==4) {
+                    change(board[i][j-1],i,j-1,light)
+                }
+                else {
+                    change(board[i][j-1],i,j-1,light)
+                    change(board[i][j+1],i,j+1,light)
+                }
+                change(board[i+1][j],i+1,j,light)
+            }
+
+            else if(i==4) {
+                if(j==0) {
+                    change(board[i][j+1],i,j+1,light)
+                }
+                else if(j==4) {
+                    change(board[i][j-1],i,j-1,light)
+                }
+                else {
+                    change(board[i][j-1],i,j-1,light)
+                    change(board[i][j+1],i,j+1,light)
+                }
+                change(board[i-1][j],i-1,j,light)
+            }
+
+            else {
+                change(board[i-1][j],i-1,j,light)
+                change(board[i+1][j],i+1,j,light)
+                change(board[i][j-1],i,j-1,light)
+                change(board[i][j+1],i,j+1,light)
+            }
+
+
+
+//        if (i == 0) {
+//            if(j==0 || j==4)
+//            //adj with box2,box6
+//            R.id.box1 -> view.setBackgroundColor(Color.BLACK)
+//
+//            //ad
+//            R.id.box2 -> view.setBackgroundColor(Color.BLACK)
+//
+//            R.id.box25 -> view.setBackgroundColor(Color.BLACK)
+//        }
     }
 }
