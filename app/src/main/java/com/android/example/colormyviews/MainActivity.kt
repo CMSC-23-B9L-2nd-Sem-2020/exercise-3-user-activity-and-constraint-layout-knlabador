@@ -32,17 +32,23 @@ import androidx.appcompat.app.AppCompatActivity
  */
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var headerText: TextView
     private lateinit var nicknameEditText: EditText
     private lateinit var changeNicknameButton: Button
     private lateinit var nicknameTextView: TextView
+    private lateinit var numOfClicksText: TextView
+    private var numOfClicks = 0
+    private var clicksText: String = "Clicks: " + numOfClicks
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        headerText = findViewById(R.id.header_text)
         nicknameEditText = findViewById(R.id.nickname_text)
         nicknameTextView = findViewById(R.id.nickname_user)
         changeNicknameButton = findViewById(R.id.submit_button)
+        numOfClicksText = findViewById(R.id.clicks_text)
 
         changeNicknameButton.setOnClickListener {
             changeNickname(it)
@@ -134,6 +140,11 @@ class MainActivity : AppCompatActivity() {
             for(j in 0..4) {
                 board[i][j].setBackgroundColor(Color.WHITE)
                 light[i][j] = 1
+                numOfClicks = 0
+                clicksText = "Clicks: " + numOfClicks
+                numOfClicksText.setText(clicksText)
+                var header: String = "Play the Lights Out Game!"
+                headerText.setText(header)
             }
         }
     }
@@ -150,7 +161,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun flipLights(view: View,board: List<List<View>>,i: Int,j: Int, light: Array<Array<Int>>) {
-
+        var winFlag = 0
+        clicksText = "Clicks: " + ++numOfClicks
+        numOfClicksText.setText(clicksText)
         change(view,i,j,light)
 
         if(i==0) {
@@ -199,6 +212,22 @@ class MainActivity : AppCompatActivity() {
             change(board[i+1][j],i+1,j,light)
             change(board[i][j-1],i,j-1,light)
             change(board[i][j+1],i,j+1,light)
+        }
+
+        for (a in 0..4) {
+            for(b in 0..4) {
+                if(light[a][b] == 0) {
+                    winFlag++
+                }
+                else {
+                    continue
+                }
+            }
+        }
+
+        if(winFlag == 25) {
+            var you_won: String = "You won!"
+            headerText.setText(you_won)
         }
     }
 }

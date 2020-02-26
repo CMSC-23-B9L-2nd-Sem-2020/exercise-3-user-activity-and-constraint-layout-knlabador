@@ -21,7 +21,7 @@
 
     <string name="submit_button">submit</string>
     <string name="reset_button">reset</string>
-    <string name="clicks_text">Clicks:</string>
+    <string name="clicks_text">Clicks: 0</string>
 
     <string name="box1">Box One</string>
     <string name="box2">Box Two</string>
