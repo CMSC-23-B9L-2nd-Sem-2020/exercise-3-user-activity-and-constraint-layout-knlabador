@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         val boxTwentyThree = findViewById<TextView>(R.id.box23)
         val boxTwentyFour = findViewById<TextView>(R.id.box24)
         val boxTwentyFive = findViewById<TextView>(R.id.box25)
-        val resetButton = findViewById<TextView>(R.id.reset_button)
+        val resetBoardButton = findViewById<Button>(R.id.reset_button)
 
         val board : List<List<View>> = listOf(
             listOf(boxOne,boxTwo,boxThree,boxFour,boxFive),
@@ -123,69 +123,82 @@ class MainActivity : AppCompatActivity() {
                 board[i][j].setOnClickListener { flipLights(it,board,i,j,boardlight) }
             }
         }
+
+        resetBoardButton.setOnClickListener {
+            retry(board,boardlight)
+        }
     }
 
-        private fun change(view: View,i: Int,j: Int, light: Array<Array<Int>>) {
-            if(light[i][j] == 1) {
-                light[i][j] = 0
-                view.setBackgroundColor(Color.BLACK)
-            }
-            else {
+    private fun retry(board: List<List<View>>,light: Array<Array<Int>>) {
+        for (i in 0..4) {
+            for(j in 0..4) {
+                board[i][j].setBackgroundColor(Color.WHITE)
                 light[i][j] = 1
-                view.setBackgroundColor(Color.WHITE)
             }
         }
+    }
 
-        private fun flipLights(view: View,board: List<List<View>>,i: Int,j: Int, light: Array<Array<Int>>) {
+    private fun change(view: View,i: Int,j: Int, light: Array<Array<Int>>) {
+        if(light[i][j] == 1) {
+            light[i][j] = 0
+            view.setBackgroundColor(Color.BLACK)
+        }
+        else {
+            light[i][j] = 1
+            view.setBackgroundColor(Color.WHITE)
+        }
+    }
 
-            change(view,i,j,light)
+    private fun flipLights(view: View,board: List<List<View>>,i: Int,j: Int, light: Array<Array<Int>>) {
 
-            if(i==0) {
-                if(j==0) {
-                    change(board[i][j+1],i,j+1,light)
-                }
-                else if(j==4) {
-                    change(board[i][j-1],i,j-1,light)
-                }
-                else {
-                    change(board[i][j-1],i,j-1,light)
-                    change(board[i][j+1],i,j+1,light)
-                }
-                change(board[i+1][j],i+1,j,light)
-            }
+        change(view,i,j,light)
 
-            else if(i==4) {
-                if(j==0) {
-                    change(board[i][j+1],i,j+1,light)
-                }
-                else if(j==4) {
-                    change(board[i][j-1],i,j-1,light)
-                }
-                else {
-                    change(board[i][j-1],i,j-1,light)
-                    change(board[i][j+1],i,j+1,light)
-                }
-                change(board[i-1][j],i-1,j,light)
-
-            }
-
-            else if(j==0) {
-                change(board[i-1][j],i-1,j,light)
-                change(board[i+1][j],i+1,j,light)
+        if(i==0) {
+            if(j==0) {
                 change(board[i][j+1],i,j+1,light)
             }
-
             else if(j==4) {
-                change(board[i-1][j],i-1,j,light)
-                change(board[i+1][j],i+1,j,light)
                 change(board[i][j-1],i,j-1,light)
             }
-
             else {
-                change(board[i-1][j],i-1,j,light)
-                change(board[i+1][j],i+1,j,light)
                 change(board[i][j-1],i,j-1,light)
                 change(board[i][j+1],i,j+1,light)
             }
+            change(board[i+1][j],i+1,j,light)
+        }
+
+        else if(i==4) {
+            if(j==0) {
+                change(board[i][j+1],i,j+1,light)
+            }
+            else if(j==4) {
+                change(board[i][j-1],i,j-1,light)
+            }
+            else {
+                change(board[i][j-1],i,j-1,light)
+                change(board[i][j+1],i,j+1,light)
+            }
+            change(board[i-1][j],i-1,j,light)
+
+        }
+
+        else if(j==0) {
+            change(board[i-1][j],i-1,j,light)
+            change(board[i+1][j],i+1,j,light)
+            change(board[i][j+1],i,j+1,light)
+        }
+
+        else if(j==4) {
+            change(board[i-1][j],i-1,j,light)
+            change(board[i+1][j],i+1,j,light)
+            change(board[i][j-1],i,j-1,light)
+        }
+
+        else {
+            change(board[i-1][j],i-1,j,light)
+            change(board[i+1][j],i+1,j,light)
+            change(board[i][j-1],i,j-1,light)
+            change(board[i][j+1],i,j+1,light)
+        }
     }
 }
