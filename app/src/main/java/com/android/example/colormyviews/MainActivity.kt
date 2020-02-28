@@ -35,10 +35,35 @@ class MainActivity : AppCompatActivity() {
     private lateinit var headerText: TextView
     private lateinit var nicknameEditText: EditText
     private lateinit var changeNicknameButton: Button
+    private lateinit var resetBoardButton: Button
     private lateinit var nicknameTextView: TextView
-    private lateinit var numOfClicksText: TextView
     private var numOfClicks = 0
-    private var clicksText: String = "Clicks: " + numOfClicks
+    private lateinit var clicksText: TextView
+    private lateinit var boxOne: TextView
+    private lateinit var boxTwo: TextView
+    private lateinit var boxThree: TextView
+    private lateinit var boxFour: TextView
+    private lateinit var boxFive: TextView
+    private lateinit var boxSix: TextView
+    private lateinit var boxSeven: TextView
+    private lateinit var boxEight: TextView
+    private lateinit var boxNine: TextView
+    private lateinit var boxTen: TextView
+    private lateinit var boxEleven: TextView
+    private lateinit var boxTwelve: TextView
+    private lateinit var boxThirteen: TextView
+    private lateinit var boxFourteen: TextView
+    private lateinit var boxFifteen: TextView
+    private lateinit var boxSixteen: TextView
+    private lateinit var boxSeventeen: TextView
+    private lateinit var boxEighteen: TextView
+    private lateinit var boxNineteen: TextView
+    private lateinit var boxTwenty: TextView
+    private lateinit var boxTwentyOne: TextView
+    private lateinit var boxTwentyTwo: TextView
+    private lateinit var boxTwentyThree: TextView
+    private lateinit var boxTwentyFour: TextView
+    private lateinit var boxTwentyFive: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +73,61 @@ class MainActivity : AppCompatActivity() {
         nicknameEditText = findViewById(R.id.nickname_text)
         nicknameTextView = findViewById(R.id.nickname_user)
         changeNicknameButton = findViewById(R.id.submit_button)
-        numOfClicksText = findViewById(R.id.clicks_text)
+        boxOne = findViewById(R.id.box1)
+        boxTwo = findViewById(R.id.box2)
+        boxThree = findViewById(R.id.box3)
+        boxFour = findViewById(R.id.box4)
+        boxFive = findViewById(R.id.box5)
+        boxSix = findViewById(R.id.box6)
+        boxSeven = findViewById(R.id.box7)
+        boxEight = findViewById(R.id.box8)
+        boxNine = findViewById(R.id.box9)
+        boxTen = findViewById(R.id.box10)
+        boxEleven = findViewById(R.id.box11)
+        boxTwelve = findViewById(R.id.box12)
+        boxThirteen = findViewById(R.id.box13)
+        boxFourteen = findViewById(R.id.box14)
+        boxFifteen = findViewById(R.id.box15)
+        boxSixteen = findViewById(R.id.box16)
+        boxSeventeen = findViewById(R.id.box17)
+        boxEighteen = findViewById(R.id.box18)
+        boxNineteen = findViewById(R.id.box19)
+        boxTwenty = findViewById(R.id.box20)
+        boxTwentyOne = findViewById(R.id.box21)
+        boxTwentyTwo = findViewById(R.id.box22)
+        boxTwentyThree = findViewById(R.id.box23)
+        boxTwentyFour = findViewById(R.id.box24)
+        boxTwentyFive = findViewById(R.id.box25)
+        resetBoardButton = findViewById(R.id.reset_button)
+        clicksText = findViewById(R.id.clicks_text)
+
+        boxOne.visibility = View.GONE
+        boxTwo.visibility = View.GONE
+        boxThree.visibility = View.GONE
+        boxFour.visibility = View.GONE
+        boxFive.visibility = View.GONE
+        boxSix.visibility = View.GONE
+        boxSeven.visibility = View.GONE
+        boxEight.visibility = View.GONE
+        boxNine.visibility = View.GONE
+        boxTen.visibility = View.GONE
+        boxEleven.visibility = View.GONE
+        boxTwelve.visibility = View.GONE
+        boxThirteen.visibility = View.GONE
+        boxFourteen.visibility = View.GONE
+        boxFifteen.visibility = View.GONE
+        boxSixteen.visibility = View.GONE
+        boxSeventeen.visibility = View.GONE
+        boxEighteen.visibility = View.GONE
+        boxNineteen.visibility = View.GONE
+        boxTwenty.visibility = View.GONE
+        boxTwentyOne.visibility = View.GONE
+        boxTwentyTwo.visibility = View.GONE
+        boxTwentyThree.visibility = View.GONE
+        boxTwentyFour.visibility = View.GONE
+        boxTwentyFive.visibility = View.GONE
+        resetBoardButton.visibility = View.GONE
+        clicksText.visibility = View.GONE
 
         changeNicknameButton.setOnClickListener {
             changeNickname(it)
@@ -74,6 +153,33 @@ class MainActivity : AppCompatActivity() {
         nicknameTextView.visibility = View.VISIBLE
         nicknameEditText.visibility = View.GONE
         changeNicknameButton.visibility = View.GONE
+        boxOne.visibility = View.VISIBLE
+        boxTwo.visibility = View.VISIBLE
+        boxThree.visibility = View.VISIBLE
+        boxFour.visibility = View.VISIBLE
+        boxFive.visibility = View.VISIBLE
+        boxSix.visibility = View.VISIBLE
+        boxSeven.visibility = View.VISIBLE
+        boxEight.visibility = View.VISIBLE
+        boxNine.visibility = View.VISIBLE
+        boxTen.visibility = View.VISIBLE
+        boxEleven.visibility = View.VISIBLE
+        boxTwelve.visibility = View.VISIBLE
+        boxThirteen.visibility = View.VISIBLE
+        boxFourteen.visibility = View.VISIBLE
+        boxFifteen.visibility = View.VISIBLE
+        boxSixteen.visibility = View.VISIBLE
+        boxSeventeen.visibility = View.VISIBLE
+        boxEighteen.visibility = View.VISIBLE
+        boxNineteen.visibility = View.VISIBLE
+        boxTwenty.visibility = View.VISIBLE
+        boxTwentyOne.visibility = View.VISIBLE
+        boxTwentyTwo.visibility = View.VISIBLE
+        boxTwentyThree.visibility = View.VISIBLE
+        boxTwentyFour.visibility = View.VISIBLE
+        boxTwentyFive.visibility = View.VISIBLE
+        resetBoardButton.visibility = View.VISIBLE
+        clicksText.visibility = View.VISIBLE
 
         val inputMethodManager: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(view.windowToken,0)
@@ -81,32 +187,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setListeners() {
-        val boxOne = findViewById<TextView>(R.id.box1)
-        val boxTwo = findViewById<TextView>(R.id.box2)
-        val boxThree = findViewById<TextView>(R.id.box3)
-        val boxFour = findViewById<TextView>(R.id.box4)
-        val boxFive = findViewById<TextView>(R.id.box5)
-        val boxSix = findViewById<TextView>(R.id.box6)
-        val boxSeven = findViewById<TextView>(R.id.box7)
-        val boxEight = findViewById<TextView>(R.id.box8)
-        val boxNine = findViewById<TextView>(R.id.box9)
-        val boxTen = findViewById<TextView>(R.id.box10)
-        val boxEleven = findViewById<TextView>(R.id.box11)
-        val boxTwelve = findViewById<TextView>(R.id.box12)
-        val boxThirteen = findViewById<TextView>(R.id.box13)
-        val boxFourteen = findViewById<TextView>(R.id.box14)
-        val boxFifteen = findViewById<TextView>(R.id.box15)
-        val boxSixteen = findViewById<TextView>(R.id.box16)
-        val boxSeventeen = findViewById<TextView>(R.id.box17)
-        val boxEighteen = findViewById<TextView>(R.id.box18)
-        val boxNineteen = findViewById<TextView>(R.id.box19)
-        val boxTwenty = findViewById<TextView>(R.id.box20)
-        val boxTwentyOne = findViewById<TextView>(R.id.box21)
-        val boxTwentyTwo = findViewById<TextView>(R.id.box22)
-        val boxTwentyThree = findViewById<TextView>(R.id.box23)
-        val boxTwentyFour = findViewById<TextView>(R.id.box24)
-        val boxTwentyFive = findViewById<TextView>(R.id.box25)
-        val resetBoardButton = findViewById<Button>(R.id.reset_button)
 
         val board : List<List<View>> = listOf(
             listOf(boxOne,boxTwo,boxThree,boxFour,boxFive),
@@ -141,10 +221,40 @@ class MainActivity : AppCompatActivity() {
                 board[i][j].setBackgroundColor(Color.WHITE)
                 light[i][j] = 1
                 numOfClicks = 0
-                clicksText = "Clicks: " + numOfClicks
-                numOfClicksText.setText(clicksText)
+                var text = "Clicks: " + numOfClicks
+                clicksText.text = text
                 var header: String = "Play the Lights Out Game!"
-                headerText.setText(header)
+                headerText.text = header
+                nicknameTextView.visibility = View.VISIBLE
+                nicknameEditText.visibility = View.GONE
+                changeNicknameButton.visibility = View.GONE
+                boxOne.visibility = View.VISIBLE
+                boxTwo.visibility = View.VISIBLE
+                boxThree.visibility = View.VISIBLE
+                boxFour.visibility = View.VISIBLE
+                boxFive.visibility = View.VISIBLE
+                boxSix.visibility = View.VISIBLE
+                boxSeven.visibility = View.VISIBLE
+                boxEight.visibility = View.VISIBLE
+                boxNine.visibility = View.VISIBLE
+                boxTen.visibility = View.VISIBLE
+                boxEleven.visibility = View.VISIBLE
+                boxTwelve.visibility = View.VISIBLE
+                boxThirteen.visibility = View.VISIBLE
+                boxFourteen.visibility = View.VISIBLE
+                boxFifteen.visibility = View.VISIBLE
+                boxSixteen.visibility = View.VISIBLE
+                boxSeventeen.visibility = View.VISIBLE
+                boxEighteen.visibility = View.VISIBLE
+                boxNineteen.visibility = View.VISIBLE
+                boxTwenty.visibility = View.VISIBLE
+                boxTwentyOne.visibility = View.VISIBLE
+                boxTwentyTwo.visibility = View.VISIBLE
+                boxTwentyThree.visibility = View.VISIBLE
+                boxTwentyFour.visibility = View.VISIBLE
+                boxTwentyFive.visibility = View.VISIBLE
+                resetBoardButton.visibility = View.VISIBLE
+                clicksText.visibility = View.VISIBLE
             }
         }
     }
@@ -162,15 +272,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun flipLights(view: View,board: List<List<View>>,i: Int,j: Int, light: Array<Array<Int>>) {
         var winFlag = 0
-        clicksText = "Clicks: " + ++numOfClicks
-        numOfClicksText.setText(clicksText)
+        numOfClicks++
+        var text = "Clicks: " + numOfClicks
+        clicksText.text = text
         change(view,i,j,light)
 
-        if(i==0) {
-            if(j==0) {
+        if(i==0) { //row 1
+            if(j==0) { //upper left box
                 change(board[i][j+1],i,j+1,light)
             }
-            else if(j==4) {
+            else if(j==4) { //upper right box
                 change(board[i][j-1],i,j-1,light)
             }
             else {
@@ -180,11 +291,11 @@ class MainActivity : AppCompatActivity() {
             change(board[i+1][j],i+1,j,light)
         }
 
-        else if(i==4) {
-            if(j==0) {
+        else if(i==4) { //row 5
+            if(j==0) { //upper left box
                 change(board[i][j+1],i,j+1,light)
             }
-            else if(j==4) {
+            else if(j==4) { //upper right box
                 change(board[i][j-1],i,j-1,light)
             }
             else {
@@ -195,13 +306,13 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        else if(j==0) {
+        else if(j==0) { //col 1
             change(board[i-1][j],i-1,j,light)
             change(board[i+1][j],i+1,j,light)
             change(board[i][j+1],i,j+1,light)
         }
 
-        else if(j==4) {
+        else if(j==4) { //col 5
             change(board[i-1][j],i-1,j,light)
             change(board[i+1][j],i+1,j,light)
             change(board[i][j-1],i,j-1,light)
@@ -214,6 +325,7 @@ class MainActivity : AppCompatActivity() {
             change(board[i][j+1],i,j+1,light)
         }
 
+        //checks if the user has already flip all the lights
         for (a in 0..4) {
             for(b in 0..4) {
                 if(light[a][b] == 0) {
@@ -228,6 +340,32 @@ class MainActivity : AppCompatActivity() {
         if(winFlag == 25) {
             var you_won: String = "You won!"
             headerText.setText(you_won)
+            boxOne.visibility = View.GONE
+            boxTwo.visibility = View.GONE
+            boxThree.visibility = View.GONE
+            boxFour.visibility = View.GONE
+            boxFive.visibility = View.GONE
+            boxSix.visibility = View.GONE
+            boxSeven.visibility = View.GONE
+            boxEight.visibility = View.GONE
+            boxNine.visibility = View.GONE
+            boxTen.visibility = View.GONE
+            boxEleven.visibility = View.GONE
+            boxTwelve.visibility = View.GONE
+            boxThirteen.visibility = View.GONE
+            boxFourteen.visibility = View.GONE
+            boxFifteen.visibility = View.GONE
+            boxSixteen.visibility = View.GONE
+            boxSeventeen.visibility = View.GONE
+            boxEighteen.visibility = View.GONE
+            boxNineteen.visibility = View.GONE
+            boxTwenty.visibility = View.GONE
+            boxTwentyOne.visibility = View.GONE
+            boxTwentyTwo.visibility = View.GONE
+            boxTwentyThree.visibility = View.GONE
+            boxTwentyFour.visibility = View.GONE
+            boxTwentyFive.visibility = View.GONE
+            clicksText.visibility = View.GONE
         }
     }
 }
